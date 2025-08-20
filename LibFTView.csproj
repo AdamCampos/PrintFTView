@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <OutputType>Library</OutputType>
+    <PlatformTarget>x86</PlatformTarget>
+
+    <!-- COM: vamos registrar com regasm (pós-build); não use o flag nativo -->
+    <RegisterForComInterop>false</RegisterForComInterop>
+
+    <!-- C# -->
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <!-- remove o CS8632 -->
+    <UseWindowsForms>true</UseWindowsForms>
+    <!-- libera System.Windows.Forms -->
+
+    <!-- opcional: layout “clássico” de saída -->
+    <OutputPath>bin\$(Platform)\$(Configuration)\</OutputPath>
+  </PropertyGroup>
+
+  <!-- Sua referência COM (early binding) está correta; mantenha assim -->
+  <ItemGroup>
+    <COMReference Include="DisplayClient">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>0</VersionMinor>
+      <VersionMajor>1</VersionMajor>
+      <Guid>85469340-f189-11d1-9c17-0060977caaf1</Guid>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+
+  <!-- (Se você já tem Targets de regasm 32-bit, mantenha-os) -->
+</Project>

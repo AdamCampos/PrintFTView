@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibFTView", "LibFTView.csproj", "{2B9CFDE8-ACA6-4EF6-9A54-65852310B2BE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2B9CFDE8-ACA6-4EF6-9A54-65852310B2BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B9CFDE8-ACA6-4EF6-9A54-65852310B2BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B9CFDE8-ACA6-4EF6-9A54-65852310B2BE}.Debug|x86.ActiveCfg = Debug|x86
+		{2B9CFDE8-ACA6-4EF6-9A54-65852310B2BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B9CFDE8-ACA6-4EF6-9A54-65852310B2BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B9CFDE8-ACA6-4EF6-9A54-65852310B2BE}.Release|x86.ActiveCfg = Release|x86
+		{2B9CFDE8-ACA6-4EF6-9A54-65852310B2BE}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {80C5A418-6DFC-4B2D-B7F1-9EFDBED16845}
+	EndGlobalSection
+EndGlobal

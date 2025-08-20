@@ -1,0 +1,11 @@
+C:\Projetos\VisualStudio\LibFTView\obj\Release\net48\LibFTView.csproj.AssemblyReference.cache
+C:\Projetos\VisualStudio\LibFTView\obj\Release\net48\LibFTView.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projetos\VisualStudio\LibFTView\obj\Release\net48\LibFTView.AssemblyInfoInputs.cache
+C:\Projetos\VisualStudio\LibFTView\obj\Release\net48\LibFTView.AssemblyInfo.cs
+C:\Projetos\VisualStudio\LibFTView\obj\Release\net48\LibFTView.csproj.CoreCompileInputs.cache
+C:\Projetos\VisualStudio\LibFTView\bin\AnyCPU\Release\net48\LibFTView.dll
+C:\Projetos\VisualStudio\LibFTView\bin\AnyCPU\Release\net48\LibFTView.pdb
+C:\Projetos\VisualStudio\LibFTView\obj\Release\net48\Interop.DisplayClient.dll
+C:\Projetos\VisualStudio\LibFTView\obj\Release\net48\LibFTView.csproj.ResolveComReference.cache
+C:\Projetos\VisualStudio\LibFTView\obj\Release\net48\LibFTView.dll
+C:\Projetos\VisualStudio\LibFTView\obj\Release\net48\LibFTView.pdb
