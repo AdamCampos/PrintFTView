@@ -9,3 +9,4 @@ C:\Projetos\VisualStudio\LibFTView\obj\Release\net48\Interop.DisplayClient.dll
 C:\Projetos\VisualStudio\LibFTView\obj\Release\net48\LibFTView.csproj.ResolveComReference.cache
 C:\Projetos\VisualStudio\LibFTView\obj\Release\net48\LibFTView.dll
 C:\Projetos\VisualStudio\LibFTView\obj\Release\net48\LibFTView.pdb
+C:\Projetos\VisualStudio\LibFTView\obj\Release\net48\LibFTView.sourcelink.json

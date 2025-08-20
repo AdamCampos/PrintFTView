@@ -1,12 +1,8 @@
-2025-08-20 07:13:58.461  === FTVApp .ctor ===
-2025-08-20 07:13:58.463  [Assembly] LibFTView, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-2025-08-20 07:13:58.463  [Bitness] x86
-2025-08-20 07:13:58.463  [Process] PID=54256
-2025-08-20 07:13:58.465  [Ping] start
-2025-08-20 07:13:58.469  [EnsureApp] Criando DisplayClient.Application...
-2025-08-20 07:13:58.479  [EnsureApp] OK
-2025-08-20 07:13:58.480  [Ping] end => OK
-2025-08-20 07:17:16.284  === FTVApp .ctor ===
-2025-08-20 07:17:16.285  [Assembly] LibFTView, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-2025-08-20 07:17:16.286  [Bitness] x86
-2025-08-20 07:17:16.286  [Process] PID=53100
+2025-08-20 15:38:47.372  === FTVApp .ctor ===
+2025-08-20 15:38:47.373  [Assembly] LibFTView, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+2025-08-20 15:38:47.374  [Bitness] x86
+2025-08-20 15:38:47.374  [Process] PID=57032
+2025-08-20 16:44:46.370  === FTVApp .ctor ===
+2025-08-20 16:44:46.374  [Assembly] LibFTView, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+2025-08-20 16:44:46.374  [Bitness] x86
+2025-08-20 16:44:46.374  [Process] PID=68364

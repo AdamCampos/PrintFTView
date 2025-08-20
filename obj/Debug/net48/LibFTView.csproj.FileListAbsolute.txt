@@ -9,3 +9,4 @@ C:\Projetos\VisualStudio\LibFTView\bin\AnyCPU\Debug\net48\LibFTView.dll
 C:\Projetos\VisualStudio\LibFTView\bin\AnyCPU\Debug\net48\LibFTView.pdb
 C:\Projetos\VisualStudio\LibFTView\obj\Debug\net48\LibFTView.dll
 C:\Projetos\VisualStudio\LibFTView\obj\Debug\net48\LibFTView.pdb
+C:\Projetos\VisualStudio\LibFTView\obj\Debug\net48\LibFTView.sourcelink.json
