@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LibFTView")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cb1b664ccbf68f639f309fb5afce00d9cc60569d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e714cb61b4063106663809e7c23cab199c4ecadb")]
 [assembly: System.Reflection.AssemblyProductAttribute("LibFTView")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LibFTView")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

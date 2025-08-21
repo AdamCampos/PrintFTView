@@ -132,11 +132,11 @@ namespace LibFTView.Services
 
             try
             {
-                Log("[OpenDisplay] LoadDisplay/ShowDisplay...");
+                Log("[OpenDisplay] LoadDisplay/ShowDisplay]...");
                 app.LoadDisplay(display, param);
                 app.ShowDisplay(display, param);
 
-                // fecha automaticamente após 3 segundos
+                // fecha automaticamente 3 segundos após carregar/mostrar
                 System.Threading.Tasks.Task.Delay(3000).ContinueWith(_ =>
                 {
                     try
@@ -151,19 +151,23 @@ namespace LibFTView.Services
                 });
 
                 Log("[OpenDisplay] sucesso -> " + display);
+                try { MessageBox.Show("OpenDisplay OK:\n" + display, "FTVApp", MessageBoxButtons.OK, MessageBoxIcon.Information); } catch { }
                 return "OK: " + display + (param.Length > 0 ? $" ({param})" : "");
             }
             catch (COMException comEx)
             {
                 Log($"[OpenDisplay][COMEX] 0x{comEx.ErrorCode:X} {comEx.Message}");
+                try { MessageBox.Show($"OpenDisplay COMEX:\n0x{comEx.ErrorCode:X}\n{comEx.Message}", "FTVApp", MessageBoxButtons.OK, MessageBoxIcon.Error); } catch { }
                 return $"#ERR COM 0x{comEx.ErrorCode:X}: {comEx.Message}";
             }
             catch (Exception ex)
             {
                 Log("[OpenDisplay][EX] " + ex);
+                try { MessageBox.Show("OpenDisplay EX:\n" + ex, "FTVApp", MessageBoxButtons.OK, MessageBoxIcon.Error); } catch { }
                 return "#ERR: " + ex.Message;
             }
         }
+
 
 
         [DispId(3)]
@@ -321,8 +325,20 @@ namespace LibFTView.Services
                     app.ShowDisplay(display, parametro ?? "");
                     total++;
                     ok++;
+                    // Depois de abrir a tela, registra HWND/container/filhos e o tipo (Janela/Tela)
+                    try
+                    {
+                        LibFTView.Win32.WindowProbe.SnapshotFtView(display, msg => Log(msg), childLimit: 8);
+                    }
+                    catch (Exception ex)
+                    {
+                        Log("[HWND][FTView][EX] " + ex.Message);
+                    }
+
+
+
                     if (waitMsPorTela > 0)
-                        System.Threading.Thread.Sleep(waitMsPorTela);
+                        System.Threading.Thread.Sleep(waitMsPorTela + 3000);
                 }
                 catch (COMException comEx)
                 {

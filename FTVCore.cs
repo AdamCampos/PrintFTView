@@ -113,6 +113,32 @@ namespace LibFTView.Services
                 app.LoadDisplay(display, param);
                 app.ShowDisplay(display, param);
 
+                // Depois de abrir a tela, registra HWND/container/filhos e o tipo (Janela/Tela)
+                try
+                {
+                    LibFTView.Win32.WindowProbe.SnapshotFtView(display, msg => Log(msg), childLimit: 8);
+                }
+                catch (Exception ex)
+                {
+                    Log("[HWND][FTView][EX] " + ex.Message);
+                }
+
+
+
+                // fecha automaticamente após 3 segundos
+                System.Threading.Tasks.Task.Delay(3000).ContinueWith(_ =>
+                {
+                    try
+                    {
+                        Log("[OpenDisplay] UnloadDisplay -> " + display);
+                        app.UnloadDisplay(display);
+                    }
+                    catch (Exception ex)
+                    {
+                        Log("[OpenDisplay][UnloadDisplay][EX] " + ex);
+                    }
+                });
+
                 Log("[OpenDisplay] sucesso -> " + display);
                 return "OK: " + display + (param.Length > 0 ? $" ({param})" : "");
             }
@@ -127,6 +153,7 @@ namespace LibFTView.Services
                 return "#ERR: " + ex.Message;
             }
         }
+
 
         public string Ping()
         {
