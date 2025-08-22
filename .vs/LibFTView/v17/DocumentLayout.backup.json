@@ -3,16 +3,24 @@
   "WorkspaceRootPath": "C:\\Projetos\\VisualStudio\\LibFTView\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{2B9CFDE8-ACA6-4EF6-9A54-65852310B2BE}|LibFTView.csproj|c:\\projetos\\visualstudio\\libftview\\windowprinter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B9CFDE8-ACA6-4EF6-9A54-65852310B2BE}|LibFTView.csproj|solutionrelative:windowprinter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B9CFDE8-ACA6-4EF6-9A54-65852310B2BE}|LibFTView.csproj|c:\\projetos\\visualstudio\\libftview\\services\\displayprinter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B9CFDE8-ACA6-4EF6-9A54-65852310B2BE}|LibFTView.csproj|solutionrelative:services\\displayprinter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2B9CFDE8-ACA6-4EF6-9A54-65852310B2BE}|LibFTView.csproj|c:\\projetos\\visualstudio\\libftview\\ftvcore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2B9CFDE8-ACA6-4EF6-9A54-65852310B2BE}|LibFTView.csproj|solutionrelative:ftvcore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2B9CFDE8-ACA6-4EF6-9A54-65852310B2BE}|LibFTView.csproj|c:\\projetos\\visualstudio\\libftview\\ftvapp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2B9CFDE8-ACA6-4EF6-9A54-65852310B2BE}|LibFTView.csproj|solutionrelative:ftvapp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2B9CFDE8-ACA6-4EF6-9A54-65852310B2BE}|LibFTView.csproj|c:\\projetos\\visualstudio\\libftview\\windowprobe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2B9CFDE8-ACA6-4EF6-9A54-65852310B2BE}|LibFTView.csproj|solutionrelative:windowprobe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B9CFDE8-ACA6-4EF6-9A54-65852310B2BE}|LibFTView.csproj|c:\\projetos\\visualstudio\\libftview\\ftvapp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B9CFDE8-ACA6-4EF6-9A54-65852310B2BE}|LibFTView.csproj|solutionrelative:ftvapp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,39 +46,65 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "WindowPrinter.cs",
+              "DocumentMoniker": "C:\\Projetos\\VisualStudio\\LibFTView\\WindowPrinter.cs",
+              "RelativeDocumentMoniker": "WindowPrinter.cs",
+              "ToolTip": "C:\\Projetos\\VisualStudio\\LibFTView\\WindowPrinter.cs",
+              "RelativeToolTip": "WindowPrinter.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAUwEsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-21T21:45:47.065Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DisplayPrinter.cs",
+              "DocumentMoniker": "C:\\Projetos\\VisualStudio\\LibFTView\\Services\\DisplayPrinter.cs",
+              "RelativeDocumentMoniker": "Services\\DisplayPrinter.cs",
+              "ToolTip": "C:\\Projetos\\VisualStudio\\LibFTView\\Services\\DisplayPrinter.cs",
+              "RelativeToolTip": "Services\\DisplayPrinter.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAAAQwFsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-21T21:10:30.084Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "WindowProbe.cs",
               "DocumentMoniker": "C:\\Projetos\\VisualStudio\\LibFTView\\WindowProbe.cs",
               "RelativeDocumentMoniker": "WindowProbe.cs",
               "ToolTip": "C:\\Projetos\\VisualStudio\\LibFTView\\WindowProbe.cs",
               "RelativeToolTip": "WindowProbe.cs",
-              "ViewState": "AgIAAHEAAAAAAAAAAAAAAJsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAKgAAAAAAAAAAAAQwMsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-21T20:02:02.923Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "FTVApp.cs",
               "DocumentMoniker": "C:\\Projetos\\VisualStudio\\LibFTView\\FTVApp.cs",
               "RelativeDocumentMoniker": "FTVApp.cs",
               "ToolTip": "C:\\Projetos\\VisualStudio\\LibFTView\\FTVApp.cs",
               "RelativeToolTip": "FTVApp.cs",
-              "ViewState": "AgIAADEBAAAAAAAAAADwv1ABAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAALUAAAAAAAAAAAAlwMcAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-20T11:41:14.891Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "FTVCore.cs",
               "DocumentMoniker": "C:\\Projetos\\VisualStudio\\LibFTView\\FTVCore.cs",
               "RelativeDocumentMoniker": "FTVCore.cs",
               "ToolTip": "C:\\Projetos\\VisualStudio\\LibFTView\\FTVCore.cs",
               "RelativeToolTip": "FTVCore.cs",
-              "ViewState": "AgIAAGUAAAAAAAAAAADwv3wAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAJ8AAAAAAAAAAAAQwMIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-20T11:23:48.834Z",
               "EditorCaption": ""

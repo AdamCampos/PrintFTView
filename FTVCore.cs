@@ -4,19 +4,19 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 using DisplayClient;
+using LibFTView.Win32;
+using LibFTView.Services;
 
 namespace LibFTView.Services
 {
     /// <summary>
-    /// Classe refatorada a partir de FTVApp, sem atributos COM e sem MessageBox,
-    /// para uso em CLI e por outras camadas. FTVApp (COM) apenas delega para ela.
+    /// Núcleo sem COM/MessageBox. Pode ser chamado via CLI ou por camadas superiores.
     /// </summary>
     public class FTVCore
     {
         private static readonly object _logLock = new object();
         private string _logDir = @"C:\Projetos\VisualStudio\LibFTView";
         private string _logFile = "ftvapp.log";
-
         private DisplayClient.Application app;
 
         public FTVCore()
@@ -34,7 +34,7 @@ namespace LibFTView.Services
             if (!string.IsNullOrWhiteSpace(folder)) _logDir = folder;
             if (!string.IsNullOrWhiteSpace(fileName)) _logFile = fileName;
             try { Directory.CreateDirectory(_logDir); } catch { }
-            Log($"[SetLogPath] dir='{(_logDir)}', file='{(_logFile)}'");
+            Log($"[SetLogPath] dir='{_logDir}', file='{_logFile}'");
         }
 
         private void Log(string msg)
@@ -113,19 +113,48 @@ namespace LibFTView.Services
                 app.LoadDisplay(display, param);
                 app.ShowDisplay(display, param);
 
-                // Depois de abrir a tela, registra HWND/container/filhos e o tipo (Janela/Tela)
+                // === Captura (print) da janela/tela aberta ===
                 try
                 {
-                    LibFTView.Win32.WindowProbe.SnapshotFtView(display, msg => Log(msg), childLimit: 8);
+                    System.Threading.Thread.Sleep(200); // dar tempo para o child aparecer
+
+                    if (WindowProbe.TryGetFtViewRenderTarget(out var capHwnd, out var fullFromTitle, Log))
+                    {
+                        // se conseguimos "/AREA::NOME" a partir do título, priorizar
+                        var fullForFile = !string.IsNullOrWhiteSpace(fullFromTitle) ? fullFromTitle : display;
+
+                        Log($"[PRINT] Preparando captura display='{fullForFile}'");
+                        var savedPath = DisplayPrinter.CaptureAfterStable(
+                                            capHwnd,
+                                            fullForFile,
+                                            DisplayPrinter.DefaultOutDir,
+                                            maxWaitMs: 7000,
+                                            sampleIntervalMs: 200,
+                                            requiredStableSamples: 3,
+                                            log: Log);
+
+                        if (!string.IsNullOrEmpty(savedPath))
+                            Log("[PRINT] OK file='" + savedPath + "'");
+                        else
+                            Log("[PRINT] NÃO FOI SALVO (timeout/falha).");
+                    }
+                    else
+                    {
+                        Log("[PRINT] Nenhum HWND renderizador encontrado; snapshot de diagnóstico:");
+                        WindowProbe.SnapshotFtView(display, Log, childLimit: 8);
+                    }
                 }
                 catch (Exception ex)
                 {
-                    Log("[HWND][FTView][EX] " + ex.Message);
+                    Log("[PRINT][EX] " + ex);
                 }
+                // === fim captura ===
 
+                // Log detalhado de HWND/container/filhos e tipagem (Janela/Tela)
+                try { WindowProbe.SnapshotFtView(display, Log, childLimit: 8); }
+                catch (Exception ex) { Log("[HWND][FTView][EX] " + ex.Message); }
 
-
-                // fecha automaticamente após 3 segundos
+                // fecha automaticamente após 3s (se desejado)
                 System.Threading.Tasks.Task.Delay(3000).ContinueWith(_ =>
                 {
                     try
@@ -153,7 +182,6 @@ namespace LibFTView.Services
                 return "#ERR: " + ex.Message;
             }
         }
-
 
         public string Ping()
         {

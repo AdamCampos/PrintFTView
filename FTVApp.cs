@@ -7,6 +7,8 @@ using System.Text;
 using System.Windows.Forms;
 using DisplayClient;
 using System.Linq;
+using LibFTView.Win32;
+using LibFTView.Services;
 
 
 namespace LibFTView.Services
@@ -135,6 +137,74 @@ namespace LibFTView.Services
                 Log("[OpenDisplay] LoadDisplay/ShowDisplay]...");
                 app.LoadDisplay(display, param);
                 app.ShowDisplay(display, param);
+
+                // === INÍCIO: Captura (print) da tela/janela aberta ===
+                try
+                {
+                    System.Threading.Thread.Sleep(200);
+
+                    if (LibFTView.Win32.WindowProbe.TryGetFtViewRenderTarget(out var capHwnd, out var fullFromTitle, Log))
+                    {
+                        var fullForFile = !string.IsNullOrWhiteSpace(fullFromTitle) ? fullFromTitle : display;
+
+                        var savedPath = LibFTView.Services.DisplayPrinter.CaptureAfterStable(
+                                            capHwnd,
+                                            fullForFile,
+                                            LibFTView.Services.DisplayPrinter.DefaultOutDir,
+                                            maxWaitMs: 7000,
+                                            sampleIntervalMs: 200,
+                                            requiredStableSamples: 3,
+                                            log: msg => Log(msg));
+
+                        Log("[PRINT] salvo -> " + savedPath);
+                    }
+                    else
+                    {
+                        Log("[PRINT] Nenhum HWND renderizador encontrado; snapshot de diagnóstico:");
+                        LibFTView.Win32.WindowProbe.SnapshotFtView(display, msg => Log(msg), childLimit: 8);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Log("[PRINT][EX] " + ex);
+                }
+                // === FIM: Captura (print) ===
+
+                // === INÍCIO: Captura (print) da tela/janela aberta ===
+                try
+                {
+                    System.Threading.Thread.Sleep(200); // janela/child aparecer (estabilização fina é por frames)
+
+                    if (WindowProbe.TryGetFtViewRenderTarget(out var capHwnd, out var fullFromTitle, Log))
+                    {
+                        var fullForFile = !string.IsNullOrWhiteSpace(fullFromTitle) ? fullFromTitle : display;
+
+                        Log($"[PRINT] Preparando captura display='{fullForFile}'");
+                        var savedPath = DisplayPrinter.CaptureAfterStable(
+                                            capHwnd,
+                                            fullForFile,
+                                            DisplayPrinter.DefaultOutDir,
+                                            maxWaitMs: 7000,
+                                            sampleIntervalMs: 200,
+                                            requiredStableSamples: 3,
+                                            log: Log);
+
+                        if (!string.IsNullOrEmpty(savedPath))
+                            Log("[PRINT] OK file='" + savedPath + "'");
+                        else
+                            Log("[PRINT] NÃO FOI SALVO (timeout/falha).");
+                    }
+                    else
+                    {
+                        Log("[PRINT] Nenhum HWND renderizador encontrado; snapshot de diagnóstico:");
+                        WindowProbe.SnapshotFtView(display, Log, childLimit: 8);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Log("[PRINT][EX] " + ex);
+                }
+                // === FIM: Captura (print) ===
 
                 // fecha automaticamente 3 segundos após carregar/mostrar
                 System.Threading.Tasks.Task.Delay(3000).ContinueWith(_ =>

@@ -26,3 +26,27 @@
 2025-08-21 17:54:32.613  [Assembly] LibFTView, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 2025-08-21 17:54:32.614  [Bitness] x86
 2025-08-21 17:54:32.614  [Process] PID=79508
+2025-08-21 18:20:57.180  === FTVApp .ctor ===
+2025-08-21 18:20:57.182  [Assembly] LibFTView, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+2025-08-21 18:20:57.182  [Bitness] x86
+2025-08-21 18:20:57.183  [Process] PID=64820
+2025-08-21 18:29:33.282  === FTVApp .ctor ===
+2025-08-21 18:29:33.283  [Assembly] LibFTView, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+2025-08-21 18:29:33.284  [Bitness] x86
+2025-08-21 18:29:33.284  [Process] PID=92568
+2025-08-21 18:39:08.907  === FTVApp .ctor ===
+2025-08-21 18:39:08.909  [Assembly] LibFTView, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+2025-08-21 18:39:08.910  [Bitness] x86
+2025-08-21 18:39:08.910  [Process] PID=65624
+2025-08-21 19:07:16.380  === FTVApp .ctor ===
+2025-08-21 19:07:16.382  [Assembly] LibFTView, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+2025-08-21 19:07:16.383  [Bitness] x86
+2025-08-21 19:07:16.383  [Process] PID=5220
+2025-08-21 19:17:23.996  === FTVApp .ctor ===
+2025-08-21 19:17:23.997  [Assembly] LibFTView, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+2025-08-21 19:17:23.997  [Bitness] x86
+2025-08-21 19:17:23.998  [Process] PID=45416
+2025-08-21 19:34:16.559  === FTVApp .ctor ===
+2025-08-21 19:34:16.561  [Assembly] LibFTView, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+2025-08-21 19:34:16.562  [Bitness] x86
+2025-08-21 19:34:16.562  [Process] PID=58696
